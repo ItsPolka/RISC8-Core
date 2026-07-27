@@ -1,24 +1,23 @@
-Verilog RISC Computer
+## 8bit Verilog RISC Computer Sim
 
 A RISC computer (CPU + memory + I/O) implemented in Verilog, 
 built as a learning project. Includes test programs
 to verify functionality.
 
-Status:
+## Status
 Early Stage/ learning process
 
-Tools:
+## Tools
  -Simulator (Icarus Verilog)
  -Waveform Viewer (GTKWave)
  
-Design Flow:
- -Write Verilog code for the circuit
- -Simulate to verify functionality
- -Synthesize into gate-level netlist
- -Perform place-and-route
- -Validate and test using implementation
+## Design Flow
+1. Write Verilog code for the circuit (RTL)
+2. Simulate to verify functionality (testbenches)
+3. Debug / iterate on RTL based on simulation results
+4. (Later, only if targeting real hardware) Synthesize → Place & Route → Bitstream/GDSII
 
-Goals:
+## Goals
  -Define instruction set architecture (ISA)
  -Implement ALU
  -Implement register file
@@ -30,4 +29,9 @@ Goals:
  -Simulate and verify with a testbench
  -(Stretch) Add I/O, pipelining, or a simple assembler
 
-RISC-V-inspired 8-bit Instruction set 
+## RISC-V-inspired 8-bit Instruction set 
+
+
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
