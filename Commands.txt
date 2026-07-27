@@ -1,0 +1,25 @@
+Commands:
+These are commonly used commands to use in this work pipeline.
+
+-------------
+
+cd "/c/Users/user/Desktop/Verilog Project"
+
+------------
+
+(compile)
+iverilog -o <output>.vvp <input>.v
+
+(run)
+vvp <input>.vvp
+
+(compile test bench)
+iverilog -o <output>.vcd <TB file>.v <input>.v
+iverilog -o <output> <input>.v
+
+(run test bench)
+vvp <input>.vcd
+vvp <input>
+
+(view waveforms, drag the vcd file into the gtkwave window)
+gtkwave

@@ -1,0 +1,108 @@
+#! /mingw64/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "E:\msys64\mingw64\lib\ivl\system.vpi";
+:vpi_module "E:\msys64\mingw64\lib\ivl\vhdl_sys.vpi";
+:vpi_module "E:\msys64\mingw64\lib\ivl\vhdl_textio.vpi";
+:vpi_module "E:\msys64\mingw64\lib\ivl\v2005_math.vpi";
+:vpi_module "E:\msys64\mingw64\lib\ivl\va_math.vpi";
+S_00000203122fad50 .scope module, "hadderTB" "hadderTB" 2 4;
+ .timescale -9 -9;
+v0000020312223800_0 .var "A", 0 0;
+v0000020312223da0_0 .var "B", 0 0;
+v0000020312223760_0 .var "C_in", 0 0;
+v00000203122236c0_0 .net "C_out", 0 0, L_00000203122fa460;  1 drivers
+v00000203122231c0_0 .net "S", 0 0, L_00000203122fa310;  1 drivers
+S_00000203122fbcd0 .scope module, "uut" "FA_df" 2 11, 3 8 0, S_00000203122fad50;
+ .timescale -9 -9;
+    .port_info 0 /OUTPUT 1 "S";
+    .port_info 1 /OUTPUT 1 "C_out";
+    .port_info 2 /INPUT 1 "A";
+    .port_info 3 /INPUT 1 "B";
+    .port_info 4 /INPUT 1 "C_in";
+L_00000203122fa380 .functor XOR 1, v0000020312223800_0, v0000020312223da0_0, C4<0>, C4<0>;
+L_00000203122fa310 .functor XOR 1, L_00000203122fa380, v0000020312223760_0, C4<0>, C4<0>;
+L_00000203122fa850 .functor AND 1, v0000020312223800_0, v0000020312223da0_0, C4<1>, C4<1>;
+L_00000203122fa690 .functor XOR 1, v0000020312223800_0, v0000020312223da0_0, C4<0>, C4<0>;
+L_00000203122fa770 .functor AND 1, v0000020312223760_0, L_00000203122fa690, C4<1>, C4<1>;
+L_00000203122fa460 .functor OR 1, L_00000203122fa850, L_00000203122fa770, C4<0>, C4<0>;
+v00000203122faee0_0 .net "A", 0 0, v0000020312223800_0;  1 drivers
+v00000203122fda60_0 .net "B", 0 0, v0000020312223da0_0;  1 drivers
+v00000203122f9f20_0 .net "C_in", 0 0, v0000020312223760_0;  1 drivers
+v00000203122f9fc0_0 .net "C_out", 0 0, L_00000203122fa460;  alias, 1 drivers
+v00000203122fbe60_0 .net "S", 0 0, L_00000203122fa310;  alias, 1 drivers
+v00000203122fbf00_0 .net *"_ivl_0", 0 0, L_00000203122fa380;  1 drivers
+v0000020312223440_0 .net *"_ivl_4", 0 0, L_00000203122fa850;  1 drivers
+v0000020312223e40_0 .net *"_ivl_6", 0 0, L_00000203122fa690;  1 drivers
+v00000203122238a0_0 .net *"_ivl_8", 0 0, L_00000203122fa770;  1 drivers
+    .scope S_00000203122fad50;
+T_0 ;
+    %vpi_call 2 15 "$dumpfile", "fadderTB.vcd" {0 0 0};
+    %vpi_call 2 16 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000203122fad50 {0 0 0};
+    %vpi_call 2 18 "$display", "Time\011A B Cin| S Cout" {0 0 0};
+    %vpi_call 2 19 "$monitor", "%g\011%b %b %b| %b %b", $time, v0000020312223800_0, v0000020312223da0_0, v0000020312223760_0, v00000203122231c0_0, v00000203122236c0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020312223800_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020312223da0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020312223760_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020312223800_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020312223da0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020312223760_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020312223800_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020312223da0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020312223760_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020312223800_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020312223da0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020312223760_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020312223800_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020312223da0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020312223760_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020312223800_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020312223da0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020312223760_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020312223800_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020312223da0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020312223760_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020312223800_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020312223da0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020312223760_0, 0, 1;
+    %delay 10, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "fadderTB.v";
+    "./fadder.v";
